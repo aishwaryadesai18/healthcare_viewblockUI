@@ -41,6 +41,11 @@
 		#ok{
 			margin-left: 70%;
 		}
+		#num{
+			margin-left: 5%;
+			width: 80%;
+			height: 30px
+		}
 	</style>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -54,6 +59,12 @@
 				$("#div1").append("Current Block Height: "+result.height);
 				$("#div1").css({"font-weight": "bold","font-size": "30","margin-left": "35%","color": "aqua","margin-top":"2%"});
 				height=Number(result.height);
+				var nums="";
+				for(var j=1;j<11;j++)
+				{
+					nums=nums+(height-11+j)+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"
+				}
+				$("#num p").html(nums).css({"font-weight": "bold","font-size": "30","color":"aqua","margin-top":"-0.5%","z-index":"-1"});
 			}
 	    	});
 
@@ -76,7 +87,7 @@
 		        		
 		        		}
 		        		$("#div3").html("<p>"+fn+"</p>");
-		        		$("#div3 p").css({"font-weight": "bold","font-size": "20","margin-top":"5%","margin-left":"10%"});
+		        		$("#div3 p").css({"font-weight": "bold","font-size": "15","margin-top":"5%","margin-left":"10%"});
 		        		fn="";
 		        		//console.log(window.atob(result1.transactions[0].payload));
 		        		//console.log((result1.transactions[0].payload));
@@ -110,7 +121,7 @@
 		<img src="block3.jpg" id="8" />&nbsp &nbsp
 		<img src="block3.jpg" id="9" />&nbsp &nbsp
 		<img src="block3.jpg" id="10" />&nbsp &nbsp 
-		
+		<div id="num"><p></p></div>
 
 
 	</div>
